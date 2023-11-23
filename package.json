@@ -8,7 +8,9 @@
     "build:rspack": "RSPACK=1 pnpm rspack -c ./config.mjs",
     "build:webpack": "WEBPACK=1 pnpm webpack -c ./config.mjs",
     "dev:webpack": "WEBPACK=1 webpack serve -c ./config.mjs",
-    "dev:rspack": "RSPACK=1 rspack dev -c ./config.mjs",
+    "dev:rspack": "cross-env RSPACK=1 rspack dev -c ./config.mjs",
+    "dev:custom": "cross-env RSPACK=1 rspack dev -c ./config/custom.mjs",
+    "dev:customjs": "cross-env RSPACK=1 rspack dev -c ./config/custom.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,11 +18,28 @@
   "license": "ISC",
   "dependencies": {
     "@rspack/cli": "latest",
+    "@rspack/core": "latest",
+    "@rspack/plugin-react-refresh": "latest",
+    "@swc/core": "^1.3.99",
+    "@types/react": "^16",
+    "@types/react-dom": "^16",
+    "antd": "^3",
     "html-webpack-plugin": "^5.5.3",
+    "postcss-loader": "^7.3.3",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "react": "^16",
+    "react-dom": "^16",
+    "swc-loader": "^0.2.3",
     "webpack": "^5.79.0",
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "@types/node": "^20.9.4",
+    "browserify": "^17.0.0",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.22",
+    "react-refresh": "^0.14.0",
+    "typescript": "^4.9.3"
   }
 }

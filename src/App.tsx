@@ -11,7 +11,10 @@ export function App() {
         <button onClick={() => setState((state) => !state)}>
           change image
         </button>
+
+        {/* Attention, critical code here */}
         <img src={require(state ? "./test.png" : "./test2.png")} alt="" />
+
         <Typography>This is Content</Typography>
         <p className="text">this is a text</p>
         <Button onClick={() => alert("test")}>Button</Button>

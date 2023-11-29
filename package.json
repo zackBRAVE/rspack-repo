@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "npm-run-all build:* --sequential --print-name",
-    "build:rspack": "cross-env RSPACK=1 pnpm rspack -c ./config/custom.mjs",
+    "build:rspack": "cross-env RSPACK=1 pnpm rspack -c ./config/rspack.mjs",
     "build:webpack": "cross-env WEBPACK=1 pnpm webpack -c ./config/webpack.mjs",
     "dev:webpack": "cross-env WEBPACK=1 webpack serve -c ./config/webpack.mjs",
-    "dev:rspack": "cross-env RSPACK=1 rspack dev -c ./config.mjs",
-    "dev:custom": "cross-env RSPACK=1 rspack dev -c ./config/custom.mjs",
-    "dev:customjs": "cross-env RSPACK=1 rspack dev -c ./config/custom.js",
+    "dev:rspack": "cross-env RSPACK=1 rspack dev -c ./config/rspack.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

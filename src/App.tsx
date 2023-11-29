@@ -1,12 +1,17 @@
 import { Button, Typography } from "antd";
-import React from "react";
-import "./render.css";
+import React, { useState } from "react";
 
 export function App() {
+  const [state, setState] = useState(false);
+
   return (
     <div>
       <div>This is Header</div>
       <div>
+        <button onClick={() => setState((state) => !state)}>
+          change image
+        </button>
+        <img src={require(state ? "./test.png" : "./test2.png")} alt="" />
         <Typography>This is Content</Typography>
         <p className="text">this is a text</p>
         <Button onClick={() => alert("test")}>Button</Button>
